@@ -1,7 +1,8 @@
-const express = require("express");
+import express from "express";
+import tracksRoutes from "./tracks.routes.js";
 
 const router = express.Router();
 
-router.use("/tracks", require("./tracks.routes"));
+router.use("/tracks", tracksRoutes);
 
-module.exports = router;
+export default router;
