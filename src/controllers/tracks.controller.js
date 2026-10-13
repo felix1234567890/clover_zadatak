@@ -1,5 +1,5 @@
-const data = require("../zadatak.json");
-const CustomErrorHandler = require("../CustomErrorHandler");
+const data = require("../data/tracks.json");
+const CustomErrorHandler = require("../errors/CustomErrorHandler");
 
 const getTracks = (_, res) => {
   const {

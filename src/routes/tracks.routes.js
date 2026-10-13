@@ -3,7 +3,7 @@ const {
   getTracks,
   getTrackById,
   sortTracks,
-} = require("../controllers/tracksController");
+} = require("../controllers/tracks.controller");
 
 const router = express.Router();
 
