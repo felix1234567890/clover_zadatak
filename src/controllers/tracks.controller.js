@@ -1,5 +1,5 @@
-const data = require("../zadatak.json");
-const CustomErrorHandler = require("../CustomErrorHandler");
+const data = require("../data/tracks.json");
+const CustomErrorHandler = require("../errors/CustomErrorHandler");
 
 const getTracks = (_, res) => {
   const {
@@ -46,7 +46,7 @@ const sortTracks = (req, res) => {
     );
 
   if (sortBy === "name") {
-    sortedTracks = trackList.sort((track1, track2) => {
+    sortedTracks = [...trackList].sort((track1, track2) => {
       if (track1.title.toLowerCase() > track2.title.toLowerCase()) {
         return 1;
       }
@@ -56,7 +56,7 @@ const sortTracks = (req, res) => {
       return 0;
     });
   } else {
-    sortedTracks = trackList.sort(
+    sortedTracks = [...trackList].sort(
       (track1, track2) => track1.duration - track2.duration
     );
   }
