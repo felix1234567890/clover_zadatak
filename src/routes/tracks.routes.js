@@ -1,9 +1,9 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getTracks,
   getTrackById,
   sortTracks,
-} = require("../controllers/tracks.controller");
+} from "../controllers/tracks.controller.js";
 
 const router = express.Router();
 
@@ -11,4 +11,4 @@ router.get("/", getTracks);
 router.get("/sorted", sortTracks);
 router.get("/:id", getTrackById);
 
-module.exports = router;
+export default router;

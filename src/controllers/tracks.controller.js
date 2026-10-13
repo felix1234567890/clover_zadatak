@@ -1,14 +1,14 @@
-const data = require("../data/tracks.json");
-const CustomErrorHandler = require("../errors/CustomErrorHandler");
+import data from "../data/tracks.json" with { type: "json" };
+import CustomErrorHandler from "../errors/CustomErrorHandler.js";
 
-const getTracks = (_, res) => {
+export const getTracks = (_, res) => {
   const {
     tracks: { data: trackList },
   } = data;
   return res.status(200).json(trackList);
 };
 
-const getTrackById = (req, res) => {
+export const getTrackById = (req, res) => {
   const {
     params: { id },
   } = req;
@@ -27,7 +27,7 @@ const getTrackById = (req, res) => {
   return res.status(200).send(track);
 };
 
-const sortTracks = (req, res) => {
+export const sortTracks = (req, res) => {
   const {
     tracks: { data: trackList },
   } = data;
@@ -61,10 +61,4 @@ const sortTracks = (req, res) => {
     );
   }
   return res.status(200).json(sortedTracks);
-};
-
-module.exports = {
-  getTracks,
-  getTrackById,
-  sortTracks,
 };
